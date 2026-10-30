@@ -20,3 +20,10 @@ resources/META-INF/yukihookapi_init
 opencode.json
 /.idea
 /.qoder
+
+# 本地逆向分析工作区：只保留可追溯的补丁与脚本
+_analysis/*
+!_analysis/DexAssembler.java
+!_analysis/verify_framing.py
+!_analysis/pudding-gaia-framing.patch
+.workbuddy/

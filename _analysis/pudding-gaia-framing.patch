@@ -1,0 +1,13 @@
+--- orig_smali/smali/lc1.smali	2026-10-30 10:12:55.732079800 +0800
++++ apk_unpack/smali/lc1.smali	2026-10-30 09:43:09.240270300 +0800
+@@ -367,6 +367,10 @@
+ 
+     .line 127
+     :goto_4
++    # [PuddingPods patch v3.47-fix1] PUDDING GAIA v4 的 len 字段只计 payload，
++    # 不含 [seq][vendor][feature][cmd] 这 4 字节；补 4 使 body 长度与 consumed 对齐。
++    add-int/lit8 v2, v2, 0x4
++
+     and-int/lit8 v0, v0, 0x1
+ 
+     .line 128
